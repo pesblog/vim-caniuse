@@ -1,6 +1,6 @@
 function! Caniuse()
   let s:line = getline(".")
-  let s:css = substitute(substitute(getline("."), '^ *', "", "g" ), ':.*$', "", "g" )
+  let s:css = substitute(substitute(substitute(getline("."), '^ *', "", "g" ), ':.*$', "", "g" ), '^-webkit-\|-moz-\|-ms-\|-o-\|', "", "g" )
   echo s:line
   echo s:css
   if s:css != ""
